@@ -1,4 +1,4 @@
-// Generated from c:/Users/Luis/OneDrive/Documentos/8-semestre/Automatas/migramatica/src/main/antlr4/gramatica/Language.g4 by ANTLR 4.13.1
+// Generated from c:/Users/ladh0/OneDrive/Documentos/8-semestre/Automatas/migramatica/src/main/antlr4/gramatica/Language.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
