@@ -1,0 +1,16 @@
+int x = 1;
+float y = 3.14;
+string nombre = "Lenguaje";
+
+for (int i = 0; i < 5; i++) {
+    print (i * 2);
+}
+
+if (x > 3) {
+    print ("Mayor que 3");
+} else if (x == 2) {
+    print ("Es igual a 2");
+} else {
+    print ("Menor que 2");
+}
+print (x+5);
