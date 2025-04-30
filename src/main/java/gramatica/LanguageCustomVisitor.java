@@ -361,7 +361,7 @@ public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
     }
 
     private void checkNumericType(String type) {
-        if (!type.equals("int") && !type.equals("float")) {
+        if (!type.equals("entero") && !type.equals("flotante")) {
             throw new RuntimeException("Operación numérica en tipo no numérico: " + type);
         }
     }

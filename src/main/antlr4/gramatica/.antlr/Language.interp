@@ -1,9 +1,9 @@
 token literal names:
 null
-'int'
-'float'
-'boolean'
-'string'
+'entero'
+'flotante'
+'booleano'
+'cadena'
 'if'
 'else'
 'for'
@@ -36,10 +36,10 @@ null
 
 token symbolic names:
 null
-INT
-FLOAT
-BOOLEAN
-STRING
+ENTERO
+FLOTANTE
+BOOLEANO
+CADENA
 IF
 ELSE
 FOR

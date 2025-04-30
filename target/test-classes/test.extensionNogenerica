@@ -1,8 +1,8 @@
-int x = 1;
-float y = 3.14;
-string nombre = "Lenguaje";
+entero x = 1;
+flotante y = 3.14;
+cadena nombre = "Lenguaje";
 
-for (int i = 0; i < 5; i++) {
+for (entero i = 0; i < 5; i++) {
     print (i * 2);
 }
 
@@ -14,3 +14,4 @@ if (x > 3) {
     print ("Menor que 2");
 }
 print (x+5);
+entero hola = 4 - 3;

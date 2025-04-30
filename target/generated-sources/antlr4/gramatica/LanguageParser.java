@@ -17,11 +17,11 @@ public class LanguageParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		INT=1, FLOAT=2, BOOLEAN=3, STRING=4, IF=5, ELSE=6, FOR=7, PRINT=8, BOOLEAN_LITERAL=9, 
-		ID=10, INT_LITERAL=11, FLOAT_LITERAL=12, STRING_LITERAL=13, PLUSPLUS=14, 
-		WS=15, COMMENT=16, LINE_COMMENT=17, EQ=18, LT=19, GT=20, LE=21, GE=22, 
-		EQEQ=23, NEQ=24, PLUS=25, MINUS=26, MUL=27, DIV=28, LPAREN=29, RPAREN=30, 
-		LBRACE=31, RBRACE=32, SEMI=33;
+		ENTERO=1, FLOTANTE=2, BOOLEANO=3, CADENA=4, IF=5, ELSE=6, FOR=7, PRINT=8, 
+		BOOLEAN_LITERAL=9, ID=10, INT_LITERAL=11, FLOAT_LITERAL=12, STRING_LITERAL=13, 
+		PLUSPLUS=14, WS=15, COMMENT=16, LINE_COMMENT=17, EQ=18, LT=19, GT=20, 
+		LE=21, GE=22, EQEQ=23, NEQ=24, PLUS=25, MINUS=26, MUL=27, DIV=28, LPAREN=29, 
+		RPAREN=30, LBRACE=31, RBRACE=32, SEMI=33;
 	public static final int
 		RULE_program = 0, RULE_statement = 1, RULE_variableDecl = 2, RULE_type = 3, 
 		RULE_assignment = 4, RULE_ifStmt = 5, RULE_forStmt = 6, RULE_printStmt = 7, 
@@ -36,7 +36,7 @@ public class LanguageParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'int'", "'float'", "'boolean'", "'string'", "'if'", "'else'", 
+			null, "'entero'", "'flotante'", "'booleano'", "'cadena'", "'if'", "'else'", 
 			"'for'", "'print'", null, null, null, null, null, "'++'", null, null, 
 			null, "'='", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'+'", "'-'", 
 			"'*'", "'/'", "'('", "')'", "'{'", "'}'", "';'"
@@ -45,8 +45,8 @@ public class LanguageParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "INT", "FLOAT", "BOOLEAN", "STRING", "IF", "ELSE", "FOR", "PRINT", 
-			"BOOLEAN_LITERAL", "ID", "INT_LITERAL", "FLOAT_LITERAL", "STRING_LITERAL", 
+			null, "ENTERO", "FLOTANTE", "BOOLEANO", "CADENA", "IF", "ELSE", "FOR", 
+			"PRINT", "BOOLEAN_LITERAL", "ID", "INT_LITERAL", "FLOAT_LITERAL", "STRING_LITERAL", 
 			"PLUSPLUS", "WS", "COMMENT", "LINE_COMMENT", "EQ", "LT", "GT", "LE", 
 			"GE", "EQEQ", "NEQ", "PLUS", "MINUS", "MUL", "DIV", "LPAREN", "RPAREN", 
 			"LBRACE", "RBRACE", "SEMI"
@@ -140,7 +140,7 @@ public class LanguageParser extends Parser {
 			setState(27);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT) | (1L << FLOAT) | (1L << BOOLEAN) | (1L << STRING) | (1L << IF) | (1L << FOR) | (1L << PRINT) | (1L << ID) | (1L << PLUSPLUS) | (1L << LBRACE) | (1L << SEMI))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ENTERO) | (1L << FLOTANTE) | (1L << BOOLEANO) | (1L << CADENA) | (1L << IF) | (1L << FOR) | (1L << PRINT) | (1L << ID) | (1L << PLUSPLUS) | (1L << LBRACE) | (1L << SEMI))) != 0)) {
 				{
 				{
 				setState(24);
@@ -357,10 +357,10 @@ public class LanguageParser extends Parser {
 	}
 
 	public static class TypeContext extends ParserRuleContext {
-		public TerminalNode INT() { return getToken(LanguageParser.INT, 0); }
-		public TerminalNode FLOAT() { return getToken(LanguageParser.FLOAT, 0); }
-		public TerminalNode BOOLEAN() { return getToken(LanguageParser.BOOLEAN, 0); }
-		public TerminalNode STRING() { return getToken(LanguageParser.STRING, 0); }
+		public TerminalNode ENTERO() { return getToken(LanguageParser.ENTERO, 0); }
+		public TerminalNode FLOTANTE() { return getToken(LanguageParser.FLOTANTE, 0); }
+		public TerminalNode BOOLEANO() { return getToken(LanguageParser.BOOLEANO, 0); }
+		public TerminalNode CADENA() { return getToken(LanguageParser.CADENA, 0); }
 		public TypeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -389,7 +389,7 @@ public class LanguageParser extends Parser {
 			{
 			setState(56);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT) | (1L << FLOAT) | (1L << BOOLEAN) | (1L << STRING))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ENTERO) | (1L << FLOTANTE) | (1L << BOOLEANO) | (1L << CADENA))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -636,10 +636,10 @@ public class LanguageParser extends Parser {
 			setState(87);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case INT:
-			case FLOAT:
-			case BOOLEAN:
-			case STRING:
+			case ENTERO:
+			case FLOTANTE:
+			case BOOLEANO:
+			case CADENA:
 				{
 				setState(85);
 				variableDecl();
@@ -861,7 +861,7 @@ public class LanguageParser extends Parser {
 			setState(117);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT) | (1L << FLOAT) | (1L << BOOLEAN) | (1L << STRING) | (1L << IF) | (1L << FOR) | (1L << PRINT) | (1L << ID) | (1L << PLUSPLUS) | (1L << LBRACE) | (1L << SEMI))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ENTERO) | (1L << FLOTANTE) | (1L << BOOLEANO) | (1L << CADENA) | (1L << IF) | (1L << FOR) | (1L << PRINT) | (1L << ID) | (1L << PLUSPLUS) | (1L << LBRACE) | (1L << SEMI))) != 0)) {
 				{
 				{
 				setState(114);

@@ -13,7 +13,7 @@ statement: variableDecl ';'
          ;
 
 variableDecl: type ID ('=' expr)?;
-type: INT | FLOAT | BOOLEAN | STRING;
+type: ENTERO | FLOTANTE | BOOLEANO | CADENA;
 
 assignment: ID '=' expr;
 
@@ -46,10 +46,10 @@ literal: INT_LITERAL
        ;
 
 // Tokens
-INT: 'int';
-FLOAT: 'float';
-BOOLEAN: 'boolean';
-STRING: 'string';
+ENTERO: 'entero';
+FLOTANTE: 'flotante';
+BOOLEANO: 'booleano';
+CADENA: 'cadena';
 IF: 'if';
 ELSE: 'else';
 FOR: 'for';
@@ -65,7 +65,7 @@ PLUSPLUS: '++';
 
 WS: [ \t\r\n]+ -> skip;
 COMMENT: '/*' .*? '*/' -> skip;
-LINE_COMMENT: '//' ~[\r\n]* -> skip;
+LINE_COMMENT: '$$' ~[\r\n]* -> skip;
 
 EQ: '=';
 LT: '<';
