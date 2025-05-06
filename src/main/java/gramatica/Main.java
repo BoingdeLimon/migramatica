@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Main {
 
-    private static final String EXTENSION = "extensionNogenerica";
+    private static final String EXTENSION = "atleticoMorelia";
     private static final String DIRBASE = "src/test/resources/";
 
     public static void main(String[] args) throws IOException {

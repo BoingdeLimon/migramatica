@@ -17,12 +17,12 @@ type: ENTERO | FLOTANTE | BOOLEANO | CADENA;
 
 assignment: ID '=' expr;
 
-ifStmt: 'if' '(' expr ')' block ('else' 'if' '(' expr ')' block)* ('else' block)?;
+ifStmt: 'si' '(' expr ')' block ('contrario' 'si' '(' expr ')' block)* ('contrario' block)?;
 
 // Ciclo for
-forStmt: 'for' '(' (variableDecl | assignment)? ';' expr? ';' (assignment | incrementStmt)? ')' block;
+forStmt: 'ciclo' '(' (variableDecl | assignment)? ';' expr? ';' (assignment | incrementStmt)? ')' block;
 
-printStmt: 'print' '(' expr ')' ';';
+printStmt: 'hola' '(' expr ')' ';';
 
 incrementStmt: ID '++' | '++' ID;
 
@@ -32,7 +32,7 @@ expr: expr '++'                          # PostIncrementExpr
     | '++' expr                          # PreIncrementExpr
     | expr ('*' | '/') expr              # MultiplicativeExpr
     | expr ('+' | '-') expr              # AdditiveExpr
-    | expr ('<' | '>' | '<=' | '>=') expr # RelationalExpr
+    | expr ('<<' | '>>' | '<<=' | '>>=') expr # RelationalExpr
     | expr ('==' | '!=') expr            # EqualityExpr
     | '(' expr ')'                       # ParenExpr
     | ID                                 # VarExpr
@@ -50,10 +50,10 @@ ENTERO: 'entero';
 FLOTANTE: 'flotante';
 BOOLEANO: 'booleano';
 CADENA: 'cadena';
-IF: 'if';
-ELSE: 'else';
-FOR: 'for';
-PRINT: 'print';
+IF: 'si';
+ELSE: 'contrario';
+FOR: 'ciclo';
+PRINT: 'hola';
 
 BOOLEAN_LITERAL: 'true' | 'false';
 ID: [a-zA-Z_][a-zA-Z0-9_]*;
@@ -68,10 +68,10 @@ COMMENT: '/*' .*? '*/' -> skip;
 LINE_COMMENT: '$$' ~[\r\n]* -> skip;
 
 EQ: '=';
-LT: '<';
-GT: '>';
-LE: '<=';
-GE: '>=';
+LT: '<<';
+GT: '>>';
+LE: '<<=';
+GE: '>>=';
 EQEQ: '==';
 NEQ: '!=';
 

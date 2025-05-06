@@ -35,10 +35,10 @@ public class LanguageParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'entero'", "'flotante'", "'booleano'", "'cadena'", "'if'", "'else'", 
-			"'for'", "'print'", null, null, null, null, null, "'++'", null, null, 
-			null, "'='", "'<'", "'>'", "'<='", "'>='", "'=='", "'!='", "'+'", "'-'", 
-			"'*'", "'/'", "'('", "')'", "'{'", "'}'", "';'"
+			null, "'entero'", "'flotante'", "'booleano'", "'cadena'", "'si'", "'contrario'", 
+			"'ciclo'", "'hola'", null, null, null, null, null, "'++'", null, null, 
+			null, "'='", "'<<'", "'>>'", "'<<='", "'>>='", "'=='", "'!='", "'+'", 
+			"'-'", "'*'", "'/'", "'('", "')'", "'{'", "'}'", "';'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
