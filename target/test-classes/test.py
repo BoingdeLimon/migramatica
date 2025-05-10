@@ -21,9 +21,4 @@ verdad = True
 if verdad == True:
     print(x + 5)
 
-i = 0
-while i < 2:
-    print(i * y)
-    i += 1
-
 variable = 4 - 3
