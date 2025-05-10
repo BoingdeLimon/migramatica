@@ -20,4 +20,7 @@ booleano verdad = true;
 si (verdad == true) {
     hola (x+5);
 }
+ciclo (entero i = 0; i << 2; i++) {
+    hola (i * y);
+}
 entero variable = 4 - 3;

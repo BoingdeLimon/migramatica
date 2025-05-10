@@ -71,7 +71,7 @@ public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
         }
 
         currentScope.put(varName, new VariableInfo(value, initialized, type));
-        System.out.println("Declarada: " + type + " " + varName + " = " + value);
+        // System.out.println("Declarada: " + type + " " + varName + " = " + value);
         return null;
     }
 
