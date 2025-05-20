@@ -39,7 +39,7 @@ public class LanguageIDE extends JFrame {
     private final Color VS_JS_COLOR = new Color(240, 219, 79);     // Color amarillo para JavaScript
     
     public LanguageIDE() {
-        setTitle("IDE para Lenguaje Personalizado");
+        setTitle("IDE para .atleticoMorelia");
         setSize(1200, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
