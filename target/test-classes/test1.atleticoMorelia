@@ -1,0 +1,8 @@
+entero numero = 10;
+si (numero != 0) {
+    si (numero == 10) {
+        hola("Esta numero es diez");
+    } contrario {
+        hola("No se que numero es");
+    }
+}

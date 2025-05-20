@@ -22,7 +22,7 @@ ifStmt: 'si' '(' expr ')' block ('contrario' 'si' '(' expr ')' block)* ('contrar
 // Ciclo for
 forStmt: 'ciclo' '(' (variableDecl | assignment)? ';' expr? ';' (assignment | incrementStmt)? ')' block;
 
-printStmt: 'hola' '(' expr ')' ';';
+printStmt: 'hola' '(' expr ')' ;
 
 incrementStmt: ID '++' | '++' ID;
 

@@ -1,0 +1,14 @@
+flotante f;
+ciclo (f = 5.0; f >> 0; f = f) {
+    hola("f es --> ");
+    hola(f)
+    f = f - 1;
+}
+
+si (f == 1.0) {
+    hola("finalmente f es 1.0");
+} contrario {
+    hola("finalmente f no es 1.0");
+}
+
+hola("f realmente vale 0.0");

@@ -53,16 +53,16 @@ public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
         } else {
             // Valores por defecto según tipo
             switch (type) {
-                case "int":
+                case "entero":
                     value = 0;
                     break;
-                case "float":
+                case "flotante":
                     value = 0.0f;
                     break;
-                case "boolean":
+                case "booleano":
                     value = false;
                     break;
-                case "string":
+                case "cadena":
                     value = "";
                     break;
                 default:
@@ -350,13 +350,13 @@ public class LanguageCustomVisitor extends LanguageBaseVisitor<Object> {
 
     private String getValueType(Object value) {
         if (value instanceof Integer)
-            return "int";
+            return "entero";
         if (value instanceof Float)
-            return "float";
+            return "flotante";
         if (value instanceof Boolean)
-            return "boolean";
+            return "booleano";
         if (value instanceof String)
-            return "string";
+            return "cadena";
         throw new RuntimeException("Tipo no reconocido para valor: " + value);
     }
 

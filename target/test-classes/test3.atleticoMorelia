@@ -1,0 +1,14 @@
+hola("Ejemplo en PYTHON o talvez en JAVASCRIPT");
+hola("Operaciones aritmeticas");
+entero a = 100;
+entero b = 200;
+hola("a sobre b  es --> ");
+hola(a / b);
+
+
+booleano falso = true;
+si (falso == false) {
+    hola("La variable falso es falsa");
+} contrario si (falso != false) {
+    hola("La variable falso es verdadera");
+}
