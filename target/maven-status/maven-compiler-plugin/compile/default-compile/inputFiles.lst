@@ -1,11 +1,12 @@
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\src\main\java\gramatica\Main.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\src\main\java\gramatica\VariableInfo.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageBaseVisitor.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageParser.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\src\main\java\gramatica\LanguageCustomVisitor.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageBaseListener.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageListener.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageLexer.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\src\main\java\gramatica\LanguageToPythonVisitor.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\src\main\java\gramatica\MainToPython.java
-c:\Users\Luis\OneDrive\Documentos\8-semestre\Automatas\migramatica\target\generated-sources\antlr4\gramatica\LanguageVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\LanguageToPythonVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageParser.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageListener.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageBaseVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageBaseListener.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\VariableInfo.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\LanguageCustomVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\LanguageToJSVisitor.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\LanguageIDE.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\src\main\java\gramatica\Main.java
+C:\Users\Carlo\OneDrive\Escritorio\8° Semestre\migramatica\target\generated-sources\antlr4\gramatica\LanguageLexer.java
