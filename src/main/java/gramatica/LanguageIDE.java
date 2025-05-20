@@ -398,7 +398,7 @@ public class LanguageIDE extends JFrame {
     private void updateFileChooserUI(JFileChooser fileChooser) {
         LookAndFeel previousLAF = UIManager.getLookAndFeel();
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+
             SwingUtilities.updateComponentTreeUI(fileChooser);
         } catch (Exception e) {
             System.err.println("No se pudo aplicar estilo al JFileChooser: " + e.getMessage());
