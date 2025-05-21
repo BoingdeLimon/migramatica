@@ -86,9 +86,11 @@ public class LanguageIDE extends JFrame {
         statusPanel.setBorder(new EmptyBorder(3, 10, 3, 10));
 
         // Botones de traducción con iconos y colores
-        translateToPythonButton = createStyledButton("Python", "/icons/pyLogo", VS_PYTHON_COLOR, Color.WHITE,
+        translateToPythonButton = createStyledButton("Python", "./src/main/resources/icons/pyLogo.png", VS_PYTHON_COLOR,
+                Color.WHITE,
                 e -> translateToPython());
-        translateToJSButton = createStyledButton("JavaScript", "/icons/jsLogo", VS_JS_COLOR, Color.BLACK,
+        translateToJSButton = createStyledButton("JavaScript", "./src/main/resources/icons/jsLogo.png", VS_JS_COLOR,
+                Color.BLACK,
                 e -> translateToJS());
 
         // Añade botones a la barra de herramientas
@@ -99,9 +101,9 @@ public class LanguageIDE extends JFrame {
         topPanel.add(toolbar, BorderLayout.CENTER);
 
         // Text areas
-        sourceCodeArea = createStyledTextPane("// Escribe tu código aquí...");
+        sourceCodeArea = createStyledTextPane("$$ Escribe tu código aquí...");
         outputArea = createStyledTextPane("");
-        outputArea.setEditable(true);
+        outputArea.setEditable(false);
 
         // Área de consola (solo lectura)
         consoleArea = createStyledTextPane("");
@@ -220,12 +222,12 @@ public class LanguageIDE extends JFrame {
 
         JMenuItem saveItem = createStyledMenuItem("Guardar", KeyEvent.VK_G);
         saveItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
-        saveItem.addActionListener(e -> saveFile(false));
+        saveItem.addActionListener(e -> saveFile(false, "atleticoMorelia"));
 
         JMenuItem saveAsItem = createStyledMenuItem("Guardar como...", KeyEvent.VK_C);
         saveAsItem
                 .setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
-        saveAsItem.addActionListener(e -> saveFile(true));
+        saveAsItem.addActionListener(e -> saveFile(true, "atleticoMorelia"));
 
         JMenuItem exitItem = createStyledMenuItem("Salir", KeyEvent.VK_S);
         exitItem.addActionListener(e -> System.exit(0));
@@ -270,6 +272,23 @@ public class LanguageIDE extends JFrame {
 
         translateMenu.add(toPythonItem);
         translateMenu.add(toJSItem);
+
+        // Menu Exportar
+        JMenu exportMenu = createStyledMenu("Exportar", KeyEvent.VK_E);
+        JMenuItem exportPythonItem = createStyledMenuItem("Exportar a Python", KeyEvent.VK_P);
+        exportPythonItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F7, 0));
+        exportPythonItem.addActionListener(e -> exportToPython());
+        
+        JMenuItem exportJSItem = createStyledMenuItem("Exportar a JavaScript", KeyEvent.VK_J);
+        exportJSItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0));
+        exportJSItem.addActionListener(e -> exportToJS());
+        
+        exportMenu.add(exportPythonItem);
+        exportMenu.add(exportJSItem);
+        // Agregar el menú de exportación al menú de traducción
+        translateMenu.add(exportMenu);
+        // Agregar un separador entre los elementos de menú
+        translateMenu.addSeparator();
 
         // Menú Ejecutar
         JMenu runMenu = createStyledMenu("Ejecutar", KeyEvent.VK_R);
@@ -355,6 +374,27 @@ public class LanguageIDE extends JFrame {
         }
     }
 
+    // Métodos para exportar a Python y JavaScript
+    private void exportToPython() {
+        translateToPython();
+        String pythonCode = outputArea.getText();
+        if (pythonCode.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay código para exportar.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        saveFile(true, "py");
+    }
+
+    private void exportToJS() {
+        translateToJS();
+        String jsCode = outputArea.getText();
+        if (jsCode.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay código para exportar.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        saveFile(true, "js");
+    }
+
     private void newFile() {
         sourceCodeArea.setText("");
         outputArea.setText("");
@@ -394,11 +434,13 @@ public class LanguageIDE extends JFrame {
         }
     }
 
-    private void saveFile(boolean saveAs) {
+    private void saveFile(boolean saveAs, String extension) {
+        String codeArea = extension.equals("atleticoMorelia") ? sourceCodeArea.getText() : outputArea.getText();
         if (lastSavedFilePath == null || saveAs) {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Guardar Archivo");
-            fileChooser.setFileFilter(new FileNameExtensionFilter("Archivos de Lenguaje", "atleticoMorelia"));
+            fileChooser.setFileFilter(
+                    new FileNameExtensionFilter("Atletico Morelia, Python, JavaScript", "atleticoMorelia", "py", "js"));
 
             // Estilo al file chooser
             updateFileChooserUI(fileChooser);
@@ -409,15 +451,14 @@ public class LanguageIDE extends JFrame {
                 String path = fileToSave.getAbsolutePath();
 
                 // Añadir extensión si no la tiene
-                if (!path.endsWith(".atleticoMorelia")) {
-                    path += ".atleticoMorelia";
+                if (!path.endsWith("." + extension)) {
+                    path += "." + extension;
                     fileToSave = new File(path);
                 }
-
-                saveToFile(fileToSave);
+                saveToFile(fileToSave, codeArea);
             }
         } else {
-            saveToFile(new File(lastSavedFilePath));
+            saveToFile(new File(lastSavedFilePath), codeArea);
         }
     }
 
@@ -436,9 +477,9 @@ public class LanguageIDE extends JFrame {
         }
     }
 
-    private void saveToFile(File file) {
+    private void saveToFile(File file, String codeArea) {
         try (FileWriter writer = new FileWriter(file)) {
-            writer.write(sourceCodeArea.getText());
+            writer.write(codeArea);
             lastSavedFilePath = file.getAbsolutePath();
             statusLabel.setText(" Archivo guardado: " + file.getName());
         } catch (IOException e) {
